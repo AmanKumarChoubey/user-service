@@ -26,6 +26,8 @@ public class UserService {
         User user=null;
         if(data.isPresent()){
             user=data.get();
+        }else{
+            throw new RuntimeException("User with id "+id+" not found");
         }
         UserResponse userResponse=new UserResponse(user.getId(),user.getName(),user.getEmail());
         return userResponse;
