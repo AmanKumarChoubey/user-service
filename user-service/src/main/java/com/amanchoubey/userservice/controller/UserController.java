@@ -21,7 +21,7 @@ public class UserController {
    public ResponseEntity<UserResponse> createUser(@RequestBody UserRequest userRequest){
         User user=userService.saveUser(userRequest);
         UserResponse userResponse=new UserResponse(user.getId(),user.getName(),user.getEmail());
-//        return ResponseEntity.ok(userResponse);  //Now i am returing a DTO for UserResponse object
+//        return ResponseEntity.ok(userResponse);  //Now i am returing a DTO for UserResponse object DTo :- Data Transfer Object
         return ResponseEntity.status(HttpStatus.CREATED).body(userResponse);
     }
 
